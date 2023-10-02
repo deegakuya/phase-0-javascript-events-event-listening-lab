@@ -6,18 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Listening to Nodes</title>
   <style>
-   div {
-     border: 1px solid red;
-     padding: 6px;
-     min-height: 12px;
-   }
+    div {
+      border: 1px solid red;
+      padding: 6px;
+      min-height: 12px;
+    }
   </style>
 </head>
 <body>
   <main id="main">My ID is "main"!</main>
   <br />
   <div>
-    <label>Input:</label><input id="input" />
+    <label>Input:</label>
+    <input id="input" type="text" placeholder="Click me">
   </div>
   <br />
   <div>
@@ -35,6 +36,24 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="index.js"></script>
+
+  <script>
+    const input = document.getElementById('input');
+    const button = document.getElementById('button');
+
+    // Define a named function for the click event
+    function clickAlert() {
+      alert('I was clicked!');
+    }
+
+    // Use addEventListener to handle the click event on the input element
+    input.addEventListener('click', clickAlert);
+
+    // Use addEventListener to handle the click event on the button element
+    button.addEventListener('click', function() {
+      alert('Button was clicked!');
+    });
+  </script>
 </body>
 </html>
+
